@@ -29,6 +29,8 @@
 
             function resetTimer() {
                 // รีเซ็ตค่าเวลา
+                seconds = 0;
+                document.getElementById("timer").textContent = seconds;
                 clearInterval(timerInterval);
             }
         }
