@@ -2,9 +2,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ตัวอย่างที่</title>
+    <title>ตัวอย่างที่ 8</title>
 </head>
 <body>
+    <h3>นาฬิกาจับเวลา</h3>
+    <div id="timer">0</div>
+    <button onclick="startTimer()">เริ่ม</button>
+    <button onclick="stopTimer()">หยุด</button>
+    <button onclick="resetTimer()">รีเซ็ต</button>
     
+    <script>
+        let timerInterval;
+        let seconds = 0;
+
+        function startTimer() {
+            // ตั้งค่า interval ให้ทำงานทุก 1 วินาที
+            timerInterval = setInterval(function () {
+                seconds++;
+                document.getElementById("timer").textContent = seconds;
+            }, 1000);
+
+            function stopTimer() {
+                // หยุด interval
+                clearInterval(timerInterval);
+            }
+
+            function resetTimer() {
+                // รีเซ็ตค่าเวลา
+                clearInterval(timerInterval);
+            }
+        }
+    </script>
 </body>
 </html>
